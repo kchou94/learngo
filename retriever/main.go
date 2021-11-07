@@ -27,6 +27,8 @@ func download(r Retriever, url string) string {
 }
 
 func inspect(r Retriever) {
+	fmt.Println("Inspect", r)
+
 	fmt.Printf("%T %v\n", r, r)
 
 	switch v := r.(type) {
@@ -35,6 +37,8 @@ func inspect(r Retriever) {
 	case *real.Retriever:
 		fmt.Println("UserAgent:", v.UserAgent)
 	}
+
+	fmt.Println()
 }
 
 func Post(poster Poster) {
